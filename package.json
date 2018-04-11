@@ -1,0 +1,22 @@
+{
+  "name": "aliyun-console",
+  "version": "1.0.0",
+  "description": "aliyun web project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fengruiabc/aliyun-console.git"
+  },
+  "author": "fengrui",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fengruiabc/aliyun-console/issues"
+  },
+  "homepage": "https://github.com/fengruiabc/aliyun-console#readme",
+  "devDependencies": {
+    "express": "^4.16.3"
+  }
+}

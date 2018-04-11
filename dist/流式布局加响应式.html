@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" style="font-size: 10vw;">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <style>
+    body {
+      background-color: #fff;
+      color: #000;
+      font-family: Arial;
+      font-size: 0.373rem;
+      margin: 0;
+    }
+
+    .container {
+      width: 10rem;
+      margin: 0 auto;
+    }
+
+    header {
+      width: 10rem;
+      height: 1rem;
+      line-height: 1rem;;
+      font-size: 0.48rem;
+      color: #fff;
+      text-align: center;
+      background-color: var(--main-color);
+    }
+
+    :root {
+      --main-color: red;
+      --base-margin: 0.1rem;
+      --item-width: 1.9rem;
+      --item-height: 1.9rem;
+    }
+
+    .item {
+      float: left;
+      background-color: var(--main-color);
+      width: var(--item-width);
+      height: var(--item-height);
+      margin-top: var(--base-margin);
+      margin-right: var(--base-margin);
+    }
+
+    @media screen and (max-width: 840px){
+      :root {
+        --main-color: pink;
+        --base-margin: 0.1rem;
+        --item-width: 2.4rem;
+        --item-height: 2rem;
+      }
+    }
+
+    @media screen and (max-width: 700px){
+      :root {
+        --main-color: yellow;
+        --base-margin: 0.1rem;
+        --item-width: 3.2rem;
+        --item-height: 2rem;
+      }
+    }
+
+    @media screen and (max-width: 540px){
+      :root {
+        --main-color: grey;
+        --base-margin: 0.1rem;
+        --item-width: 4.8rem;
+        --item-height: 4.8rem;
+      }
+    }
+
+    @media screen and (max-width: 400px){
+      :root {
+        --main-color: blue;
+        --base-margin: 0.1rem;
+        --item-width: 10rem;
+        --item-height: 4rem;
+      }
+    }
+
+  </style>
+  <title>弹性布局加响应式</title>
+</head>
+<body class="container">
+<header>
+  弹性布局+响应式+css变量
+</header>
+
+<div class="content">
+  <div class="item"></div>
+  <div class="item"></div>
+  <div class="item"></div>
+  <div class="item"></div>
+  <div class="item"></div>
+  <div class="item"></div>
+  <div class="item"></div>
+  <div class="item"></div>
+  <div class="item"></div>
+  <div class="item"></div>
+</div>
+
+</body>
+</html>
