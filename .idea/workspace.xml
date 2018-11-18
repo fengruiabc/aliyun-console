@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2bedd8c5-0deb-4e8f-ae63-3103423e78f9" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/clickAttack.html" afterPath="$PROJECT_DIR$/dist/clickAttack.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/csrf.html" afterPath="$PROJECT_DIR$/dist/csrf.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -73,21 +72,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="clickAttack.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="clickAttack.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dist/clickAttack.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+            <state relative-caret-position="-434">
+              <caret line="14" column="23" lean-forward="true" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="csrf.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="csrf.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/dist/csrf.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="20" column="18" lean-forward="true" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="18" />
+            <state relative-caret-position="285">
+              <caret line="27" column="7" lean-forward="true" selection-start-line="27" selection-start-column="7" selection-end-line="27" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -132,6 +131,7 @@
         <option value="$PROJECT_DIR$/dist/vw vh自适应.html" />
         <option value="$PROJECT_DIR$/dist/iosAttack.html" />
         <option value="$PROJECT_DIR$/dist/clickAttack.html" />
+        <option value="$PROJECT_DIR$/dist/csrf.html" />
       </list>
     </option>
   </component>
@@ -311,12 +311,12 @@
       <workItem from="1523422332846" duration="617000" />
       <workItem from="1523525403386" duration="750000" />
       <workItem from="1524390043801" duration="10000" />
-      <workItem from="1537285292551" duration="3833000" />
+      <workItem from="1537285292551" duration="4491000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5210000" />
+    <option name="totallyTimeSpent" value="5868000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="839" extended-state="6" />
@@ -514,18 +514,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dist/csrf.html">
+    <entry file="file://$PROJECT_DIR$/dist/clickAttack.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="20" column="18" lean-forward="true" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="18" />
+        <state relative-caret-position="-434">
+          <caret line="14" column="23" lean-forward="true" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dist/clickAttack.html">
+    <entry file="file://$PROJECT_DIR$/dist/csrf.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+        <state relative-caret-position="285">
+          <caret line="27" column="7" lean-forward="true" selection-start-line="27" selection-start-column="7" selection-end-line="27" selection-end-column="7" />
           <folding />
         </state>
       </provider>
