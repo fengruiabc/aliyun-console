@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <script>
+    (function(win) {
+      /**
+       * 曾经出现过的问题：
+       * vivo 云手机出现过无法改默认viewport的情况
+       * 小米2 三星4.1.1 在手淘webview下面加此target-densitydpi=device-dpi属性线可细，但是会出现闪屏，故需加默认的viewport meta
+       * ios 6.0.1的width需重置，否则会继承上一次的width值
+       * iphone6 width由原来375变为750时，屏幕可左右滑动
+       * 中兴 ZTEU930 对rem的计算有问题 1rem != html font-size = font-size
+       * 魅族 M531 4.4.4 对rem的计算有问题 1rem != html 约等于 1.05 html的font-size
+       */
+      var docEl = document.documentElement;
+      var fontEl = document.createElement('style');
+
+
+      function setUnitA() {
+        var docWidth = docEl.clientWidth;
+        var extraStyle = '}';
+
+        //如果是pc pc上宽度一般是1024以上 ipad的分辨率宽度1024 ipad就让其满屏显示 其余pc上显示640居中
+        if (!navigator.userAgent.match(/Android|BlackBerry|iPhone|iPad|iPod|Opera Mini|IEMobile/i) && docWidth > 1024) {
+          docWidth = 640;
+          //仅pc下body为640 且居中
+          extraStyle = ';max-width:' + docWidth + 'px;margin-right:auto!important;margin-left:auto!important;}';
+        }
+
+        win.rem = docWidth / 10;
+
+        //ZTE 中兴 ZTE U930_TD/1.0 Linux/2.6.39/Android/4.0Release/3.5.2012 Browser/AppleWebkit534.30
+        //老机器bug rem计算不是标准=html fontsize
+        if (/ZTE U930_TD/.test(navigator.userAgent)) {
+          win.rem = win.rem * 1.13;
+        }
+
+        //魅族 M351对应实验室的E6机器
+        //注意 魅族 5.0.1 是正常的 不需要 hack
+        //Mozilla/5.0(Linux; Android 4.4.4; M351 Build/KTU84p) AppleWebKit/537.36(KHTML, like Gecko) Version/4.0 Chrome/33.0.0.0 Mobile Safari/537.36 AliApp(TB/5.2.7.2) WindVane/6.4.0 1080X1800 GCanvas/1.4.2.17
+        if (/Android\s+4\.4\.4;\s+M351\s/.test(navigator.userAgent)) {
+          win.rem = win.rem / 1.05;
+        }
+
+        // 但在MX4的机器上 还有另外一个问题
+        // Mozilla/5.0(Linux;Android 5.0.1;MX4 Pro Build/LRX22C) AppleWebKit/537.36(KHTML,like Gecko) Version/4.0 Chrome/40.0.2214.114 Mobile Safari/537.36 AliApp(TB/5.5.0) WindVane/8.0.0 1536X2560 GCanvas/1.4.2.21
+        if (/Android\s+5\.0\.1;\s+MX4\s/.test(navigator.userAgent)) {
+          win.rem = win.rem * 1.06382;
+        }
+
+        // Coolpad 8297 U4内核兼容，关键字( UCBS )
+        // "Mozilla/5.0 (Linux; U; Android 4.2.2; zh-CN; Coolpad 8297 Build/JDQ39) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/40.0.2214.89 UCBrowser/11.2.0.880 UCBS/2.9.5.7 Mobile Safari/537.36 AliApp(TB/6.2.4.37412) WindVane/8.0.0 720X1280 GCanvas/1.4.2.21"
+        if (/Android\s+4\.2\.2;[\s\-;]+Coolpad\s8297[\s\w\S;]+UCBS/.test(navigator.userAgent)) {
+          win.rem = win.rem * 0.908;
+        }
+
+        fontEl.innerHTML = 'html{font-size:' + win.rem + 'px!important;}body{font-size:' + 12 * (docWidth / 320) + 'px' + extraStyle;
+      }
+
+      docEl.firstElementChild.appendChild(fontEl);
+
+      win.addEventListener('resize', function() {
+        //resize时立刻change,pad上刷屏明显
+        setUnitA();
+      }, false);
+
+
+      win.addEventListener('pageshow', function(e) {
+        if (e.persisted) {
+          setUnitA();
+        }
+      }, false);
+
+      setUnitA();
+
+    })(window);
+  </script>
+  <style>
+    body {
+      background-color: #fff;
+      color: #000;
+      font-family: Arial;
+      font-size: 0.373rem;
+      margin: 0;
+    }
+
+    .container {
+      width: 10rem;
+    }
+
+    header {
+      width: 10rem;
+      height: 1.333rem;
+      line-height: 1.333rem;;
+      font-size: 0.48rem;
+    }
+
+    .menu {
+      float: left;
+      width: 2rem;
+      height: 2.6667rem;
+      background-color: #008800;
+      margin-right: 0.2rem;
+    }
+
+    .content {
+      float: left;
+      width: 6rem;
+      height: 8rem;
+      background-color: #333333;
+      margin-right: 0.2rem;
+    }
+
+    .right-menu {
+      float: left;
+      width: 1.6rem;
+      height: 2.667rem;
+      background-color: #880000;
+    }
+
+  </style>
+  <title>rem高保真自适应布局</title>
+</head>
+<body class="container">
+<header>
+  rem高保真自适应布局
+</header>
+<div class="menu">
+  this is left bar
+</div>
+<div class="content">
+  我是高保真宽度自适配方案。我的页面内所有元素的大小都由font-size决定
+</div>
+<div class="right-menu">
+  我是右侧边栏
+</div>
+</body>
+</html>
